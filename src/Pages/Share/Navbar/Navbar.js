@@ -33,7 +33,7 @@ const Navbar = () => {
                             <NavLink to='/services'>Services</NavLink>
                         </li>
                         <li>
-                            <a href="#">Contact Us</a>
+                            <NavLink to='/login'>Services</NavLink>
                         </li>
                     </ul>
                 </div>
@@ -51,9 +51,7 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="" target="_blank">
-                                <FaFacebookSquare></FaFacebookSquare>
-                            </a>
+                            <NavLink to='/login'>Login</NavLink>
                         </li>
                     </ul>
                     <div className="hamburger-menu">

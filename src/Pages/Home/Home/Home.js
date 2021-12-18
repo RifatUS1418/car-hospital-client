@@ -7,12 +7,9 @@ import Review from '../Review/Review';
 import Services from '../Services/Services';
 import VehicleServiced from '../VehicleServiced/VehicleServiced';
 import { IMAGES } from '../mock';
-import Footer from '../../Share/Footer/Footer';
-import Navbar from '../../Share/Navbar/Navbar';
 const Home = () => {
     return (
         <div>
-
             <Carousel time={6000}>
                 {
                     IMAGES.map((image, index) => <img key={index} src={image.imageUrl} alt={image.placeHolder} />)
