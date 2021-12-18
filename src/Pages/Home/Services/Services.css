@@ -1,0 +1,46 @@
+.holder{
+    position: relative;
+    text-align: center;
+}
+
+.holder:hover img{
+    filter: brightness(50%);
+}
+.container{
+    position: absolute;
+    top: 15%;
+    text-align: center;
+}
+.special-button{
+    border: 1px solid white;
+    color: white;
+    padding: 15px
+}
+
+.special-button:hover{
+    background-color: rgb(24, 71, 199);
+    border: 1px solid rgb(24, 71, 199);
+}
+
+.content .effect p{
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition:0.5s;
+    padding: 20px;
+}
+.content .effect button{
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition:0.5s;
+}
+
+.holder:hover .container .content .effect p{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.holder:hover .container .content .effect button{
+    transform: translateY(0px);
+    opacity: 1;
+}

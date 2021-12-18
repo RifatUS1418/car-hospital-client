@@ -1,0 +1,21 @@
+.member-img:hover{
+    opacity: 0.7;
+    transition: .5s ease;
+}
+
+.icon{
+    /* transform: translateY(700px); */
+    opacity: 0;
+    transition:0.2s;
+    top: 90%;
+    z-index: 1;
+}
+
+.media-logo:hover{
+    background-color: rgb(36, 117, 238);
+}
+
+.member-container:hover .icon{
+    transform: translateY(-40px);
+    opacity: 1;
+}

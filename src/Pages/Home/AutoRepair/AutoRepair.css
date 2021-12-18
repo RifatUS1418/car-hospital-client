@@ -1,0 +1,9 @@
+.image-effect:hover{
+    opacity: 0.7;
+    transition: .5s ease;
+}
+
+.text-effect:hover{
+    opacity: 0.7;
+    transition: .5s ease;
+}

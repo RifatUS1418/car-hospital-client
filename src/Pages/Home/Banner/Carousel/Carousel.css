@@ -1,0 +1,39 @@
+.banner-text{
+    /* left: 15%; */
+    width: 100%;
+    text-align: center;
+    transform: translateY(200px);
+    transition: 0.7s;
+    opacity: 0;
+}
+
+.banner-container:hover .banner-text{
+    transform: translateY(400px);
+    opacity: 1;
+}
+
+.banner-para{
+    width: 100%;
+    text-align: center;
+    transform: translateY(1000px);
+    transition: 0.7s;
+    opacity: 0;
+}
+
+.banner-container:hover .banner-para{
+    transform: translateY(470px);
+    opacity: 1;
+}
+
+.banner-logo{
+    width: 100%;
+    text-align: center;
+    transform: translateY(200px);
+    transition: 0.7s;
+    opacity: 0;
+}
+
+.banner-container:hover .banner-logo{
+    transform: translateY(300px);
+    opacity: 1;
+}

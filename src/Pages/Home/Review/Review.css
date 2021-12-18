@@ -1,0 +1,7 @@
+.review-background{
+    background-image: url(../../../images/review.jpg);
+    background-attachment: fixed;
+    height: 80vh;
+    filter:brightness(70%);
+    background-position: center;
+}

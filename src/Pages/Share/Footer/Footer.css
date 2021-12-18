@@ -1,0 +1,49 @@
+.background-footer{
+    background-color: #73767A;
+}
+
+.text-footer{
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans Condensed', sans-serif; */
+    /* font-size: 21px; */
+    font-weight: 300;
+}
+
+.line{
+    color: #888A8E;
+}
+
+.check-sign{
+    color: #D5D5D5;
+}
+
+.footer-small-text{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-button{
+    border: 1px solid #888A8E;
+    margin: 1px;
+    color: #D5D5D5;
+    cursor: pointer;
+    text-align: center;
+    /* display: inline-block; */
+}
+
+.footer-button:hover{
+    border-color: #fff;
+    color: #fff;
+}
+
+
+.footer-icon{
+    background:none;
+    border: 1px solid #888A8E;
+    color: #D5D5D5;
+}
+
+.footer-icon:hover{
+    color: #fff;
+    border-color: #fff;
+}
+
