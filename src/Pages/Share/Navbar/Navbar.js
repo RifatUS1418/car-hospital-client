@@ -6,9 +6,11 @@ import {
 } from 'react-icons/fa';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from 'react-router-dom';
+import useAuth from './../../../hooks/useAuth';
 
 const Navbar = () => {
     const [showMediaIcons, setShowMediaIcons] = useState(false);
+    const { user, logout } = useAuth();
     return (
         <>
             <nav className='main-nav'>
@@ -40,7 +42,7 @@ const Navbar = () => {
                 {/* 3rd social media links */}
                 <div className="social-media">
                     <ul className="social-media-desktop">
-                        <li>
+                        {/* <li>
                             <a href="" target="_blank">
                                 <FaFacebookSquare></FaFacebookSquare>
                             </a>
@@ -49,9 +51,15 @@ const Navbar = () => {
                             <a href="" target="_blank">
                                 <FaFacebookSquare></FaFacebookSquare>
                             </a>
-                        </li>
+                        </li> */}
+
                         <li>
-                            <NavLink to='/login'>Login</NavLink>
+                            {
+                                user?.email ?
+                                    <button onClick={logout}>Logout</button>
+                                    :
+                                    <NavLink to='/login'>Login</NavLink>
+                            }
                         </li>
                     </ul>
                     <div className="hamburger-menu">
