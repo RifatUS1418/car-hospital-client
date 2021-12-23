@@ -10,18 +10,22 @@ const formReducers = (state = initialData, action) => {
     switch (action.type) {
         case "REGISTER_SUBMIT":
             const { data } = action.user;
-
-            return createUserWithEmailAndPassword(auth, data.email, data.password)
+            createUserWithEmailAndPassword(auth, data.email, data.password)
                 .then((userCredential) => {
                     // setAuthError('');
-                    // user: { email: state.user.email, displayName: state.name };
-                    // // setUser(newUser);
 
                 })
                 .catch((error) => {
                     // setAuthError(error.message);
                     // ..
-                })
+                });
+            const newUser = { email: data.email, displayName: data.name };
+
+            return {
+                ...state,
+                user: newUser
+            }
+
         default: return state;
     }
 }
