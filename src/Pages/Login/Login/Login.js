@@ -59,7 +59,9 @@ const Login = () => {
                         {/* {isLoading && <CircularProgress />}
                         {user?.email && alert("Login successfully!")}
                         {authError && alert(authError)} */}
-                        <p>Are your new here? Please <NavLink to='/register'>Register</NavLink></p>
+                        <div className='flex justify-center'>
+                            <p className="text-2xl font-semibold py-5"><NavLink to='/register'>Are your new here? Please Register</NavLink></p>
+                        </div>
                     </div>
                 </div>
             </div>

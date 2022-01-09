@@ -1,0 +1,21 @@
+:root{
+    --light-blue: rgb(24, 114, 199);
+    /* --light-gray: #E5E5E5; */
+    --light-gray: #eeecec;
+}
+
+.regular-font{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.regular-para{
+    font-family: 'Open Sans', sans-serif;
+    line-height: 26px;
+    font-size: 14px;
+    font-weight:500;
+    color: #777;
+}
+
+.regular-background{
+    background: var(--light-gray);
+}

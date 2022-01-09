@@ -4,6 +4,7 @@ import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Register/Register';
+import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import ServicesCollection from './Pages/Services/ServicesCollection';
 import Footer from './Pages/Share/Footer/Footer';
 import Navbar from './Pages/Share/Navbar/Navbar';
@@ -19,6 +20,7 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
             <Route path='/services' element={<ServicesCollection />} />
+            <Route path='/details/:serviceId' element={<ServiceDetails />} />
             <Route path='/team' element={<Team />} />
             <Route path='/home' element={<Home />} />
             <Route exact path='/' element={<Home />} />

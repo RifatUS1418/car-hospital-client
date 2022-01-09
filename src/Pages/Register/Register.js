@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import registerImg from '../../images/banner1.jpg';
 import { useSelector, useDispatch } from 'react-redux';
@@ -84,8 +84,10 @@ const Register = () => {
                             {user?.email && alert("user created successfully")}
                             {/* {authError && alert(authError)} */}
                         </form>
+                        <div className='flex justify-center'>
+                            <p className="text-2xl font-semibold py-5"><NavLink to='/login'>Already registered? Please Login</NavLink></p>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div >

@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "car-service-d9040"
+  },
+  "targets": {
+    "car-service-d9040": {
+      "hosting": {
+        "car-service": [
+          "car-hospital-62c55"
+        ]
+      }
+    }
   }
 }
