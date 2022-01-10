@@ -1,6 +1,6 @@
 import initializeFirebase from "../Pages/Firebase/firebase.init";
 import { useState, useEffect } from 'react';
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, updateProfile, getIdToken } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 
 
 // initialize firebase app
@@ -22,7 +22,7 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 // save user to the database
-                // saveUser(email, name, 'POST');
+                saveUser(email, name, 'POST');
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -77,10 +77,7 @@ const useFirebase = () => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-                // getIdToken(user)
-                //     .then(idToken => {
-                //         setToken(idToken);
-                //     })
+
             } else {
                 setUser({});
             }

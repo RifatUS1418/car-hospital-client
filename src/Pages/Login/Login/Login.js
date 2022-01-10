@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import loginImg from '../../../images/tire (1).jpg'
 import './Login.css'
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
+    const { user, loginUser, isLoading, signInWithGoogle, authError } = useAuth();
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -20,6 +22,15 @@ const Login = () => {
 
     }
 
+    const handleLoginSubmit = e => {
+        loginUser(loginData.email, loginData.password, location, navigate);
+        e.preventDefault();
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, navigate);
+    }
+
     return (
         <div>
 
@@ -32,7 +43,7 @@ const Login = () => {
                         <div className="flex justify-center mt-20">
                             <h1 className='form-head text-2xl p-5 w-9/12 font-semibold mb-5'>Login</h1>
                         </div>
-                        <form>
+                        <form onSubmit={handleLoginSubmit}>
                             <div className='flex justify-center mb-5'>
                                 <input type="email"
                                     name="email"
@@ -53,11 +64,11 @@ const Login = () => {
                                     type='submit'>Login</button>
                             </div>
                             <div className='flex justify-center'>
-                                <button className='page-text text-2xl font-semibold page-button px-10 py-5 button-color w-9/12'>Google Sign In</button>
+                                <button className='page-text text-2xl font-semibold page-button px-10 py-5 button-color w-9/12' onClick={handleGoogleSignIn}>Google Sign In</button>
                             </div>
                         </form>
-                        {/* {isLoading && <CircularProgress />}
-                        {user?.email && alert("Login successfully!")}
+                        {/* {isLoading && <CircularProgress />} */}
+                        {/* {user?.email && alert("Login successfully!")}
                         {authError && alert(authError)} */}
                         <div className='flex justify-center'>
                             <p className="text-2xl font-semibold py-5"><NavLink to='/register'>Are your new here? Please Register</NavLink></p>

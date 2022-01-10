@@ -10,10 +10,10 @@ const Register = () => {
     const [loginData, setLoginData] = useState({});
     // console.log(loginData);
     const navigate = useNavigate();
-    const { registerUser, isLoading, authError } = useAuth();
-    const dispatch = useDispatch();
-    const user = useSelector((state) => state.formReducers.user);
-    console.log(user);
+    const { user, registerUser, isLoading, authError } = useAuth();
+    // const dispatch = useDispatch();
+    // const user = useSelector((state) => state.formReducers.user);
+    // console.log(user);
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -24,15 +24,14 @@ const Register = () => {
         setLoginData(newLoginData);
     }
 
-    // const handleLoginSubmit = e => {
-    //     // if (loginData.password !== loginData.password2) {
-    //     //     alert('Your password did not match');
-    //     //     return
-    //     // }
-    //     // registerUser(loginData.email, loginData.password, loginData.name, navigate);
-    //     registerUser(loginData.email, loginData.password);
-    //     e.preventDefault();
-    // }
+    const handleLoginSubmit = e => {
+        if (loginData.password !== loginData.password2) {
+            alert('Your password did not match');
+            return
+        }
+        registerUser(loginData.email, loginData.password, loginData.name, navigate);
+        e.preventDefault();
+    }
 
     return (
         <div>
@@ -45,8 +44,8 @@ const Register = () => {
                         <div className="flex justify-center">
                             <h1 className='form-head text-2xl p-5 w-9/12 font-semibold mb-5'>Register</h1>
                         </div>
-                        {/* <form onSubmit={handleLoginSubmit}> */}
-                        <form onSubmit={() => dispatch(submitData(loginData))}>
+                        <form onSubmit={handleLoginSubmit}>
+                            {/* <form onSubmit={() => dispatch(submitData(loginData))}> */}
                             <div className='flex justify-center mb-5'>
                                 <input type="text"
                                     name="name"
@@ -79,10 +78,10 @@ const Register = () => {
                                 <button className='page-text text-2xl font-semibold page-button px-10 py-5 text-white w-9/12 mb-5' type="submit">Register</button>
                             </div>
                             {/* <div className='flex justify-center'>
-                                <button className='page-text text-2xl font-semibold page-button px-10 py-5 button-color w-9/12' onClick>Google Sign In</button>
+                                <button className='page-text text-2xl font-semibold page-button px-10 py-5 button-color w-9/12' onClick={}>Google Sign In</button>
                             </div> */}
-                            {user?.email && alert("user created successfully")}
-                            {/* {authError && alert(authError)} */}
+                            {/* {user?.email && alert("user created successfully")}
+                            {authError && alert(authError)} */}
                         </form>
                         <div className='flex justify-center'>
                             <p className="text-2xl font-semibold py-5"><NavLink to='/login'>Already registered? Please Login</NavLink></p>

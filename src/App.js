@@ -9,6 +9,7 @@ import ServicesCollection from './Pages/Services/ServicesCollection';
 import Footer from './Pages/Share/Footer/Footer';
 import Navbar from './Pages/Share/Navbar/Navbar';
 import Team from './Pages/Team/Team';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
             <Route path='/services' element={<ServicesCollection />} />
-            <Route path='/details/:serviceId' element={<ServiceDetails />} />
+            <Route path='/details/:serviceId' element={<PrivateRoute><ServiceDetails />
+            </PrivateRoute>} />
             <Route path='/team' element={<Team />} />
             <Route path='/home' element={<Home />} />
             <Route exact path='/' element={<Home />} />

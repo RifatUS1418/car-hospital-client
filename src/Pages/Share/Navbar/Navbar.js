@@ -34,9 +34,9 @@ const Navbar = () => {
                         <li>
                             <NavLink to='/services'>Services</NavLink>
                         </li>
-                        <li>
+                        {/* <li>
                             <NavLink to='/login'>Services</NavLink>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 {/* 3rd social media links */}
